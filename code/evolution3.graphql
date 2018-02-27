@@ -1,0 +1,5 @@
+type Film {
+  title: String
+  director: String
+  directedBy: Person
+}

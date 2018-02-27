@@ -1,0 +1,10 @@
+{
+  nominations: [{
+    nominee: {
+      id: 24
+    },
+    nominator: {
+      id: 12
+    }
+  }]
+}

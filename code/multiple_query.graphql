@@ -1,0 +1,11 @@
+{
+  currentUser {
+    email
+  }
+  award(id: 12) {
+    title
+    nominees(first: 9) {
+      firstName
+    }
+  }
+}

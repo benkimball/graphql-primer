@@ -1,0 +1,10 @@
+{
+  nominations {
+    nominee {
+      id
+    }
+    nominator {
+      id
+    }
+  }
+}
