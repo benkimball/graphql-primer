@@ -34,23 +34,23 @@
 			<div class="slides language-graphql">
 				<section>
 					<h1>GraphQL</h1>
-					<h3 class="fragment">A primer</h3>
+					<h3>A primer</h3>
 				</section>
 
-				<section>
-					<h2 class="fragment">Meta</h2>
+        <section><h2>Meta</h2></section>
 
-					<p class="fragment">My goal is to explain and demonstrate the GraphQL specification</p>
+        <section>
+					<p>My goal is to explain and demonstrate the GraphQL specification</p>
 
 					<p class="fragment">It should last about 20 minutes, leaving us 10 minutes for discussion</p>
 
 					<p class="fragment">These slides are <a href="https://github.com/benkimball/graphql-primer">available online</a></p>
 				</section>
 
-				<section>
-					<h3>What is GraphQL?</h3>
+        <section><h2>What is GraphQL?</h2></section>
 
-					<p class="fragment">GraphQL is a <a href="http://facebook.github.io/graphql/October2016/">specification</a> for a query language for APIs.</p>
+        <section>
+					<p>GraphQL is a <a href="http://facebook.github.io/graphql/October2016/">specification</a> for a query language for APIs.</p>
 
 					<p class="fragment">It is an <em>alternative</em> to REST.</p>
 
@@ -59,33 +59,31 @@
 					</aside>
 				</section>
 
-				<section>
-					<h3>Who uses GraphQL?</h3>
+        <section><h2>Who uses GraphQL?</h2></section>
 
-					<div class="fragment">
-						<p>GraphQL is in use by many notable companies, including</p>
-						<div class="logos">
-							<img width="100" height="100" src="/img/facebook.png" title="Facebook">
-							<img width="100" height="100" src="/img/github.png" title="GitHub" class="invert">
-							<img width="100" height="100" src="/img/pinterest.png" title="Pinterest">
-							<img width="100" height="100" src="/img/nyt.png" title="The New York Times" class="invert">
-							<img width="100" height="100" src="/img/shopify.png" title="Shopify">
-							<img width="100" height="100" src="/img/twitter.png" title="Twitter">
-						</div>
-					</div>
+        <section>
+          <div>
+            <p>GraphQL is in use by many notable companies, including</p>
+            <div class="logos">
+              <img width="100" height="100" src="/img/facebook.png" title="Facebook">
+              <img width="100" height="100" src="/img/github.png" title="GitHub" class="invert">
+              <img width="100" height="100" src="/img/pinterest.png" title="Pinterest">
+              <img width="100" height="100" src="/img/nyt.png" title="The New York Times" class="invert">
+              <img width="100" height="100" src="/img/shopify.png" title="Shopify">
+              <img width="100" height="100" src="/img/twitter.png" title="Twitter">
+            </div>
+          </div>
 
           <p class="fragment">(if you care)</p>
-					<aside class="notes">
-						GitHub in particular has provided a <a href="https://githubengineering.com/the-github-graphql-api/">good writeup</a> of why they moved from their very popular REST API to GraphQL, which is available on their engineering blog.
-					</aside>
-				</section>
+          <aside class="notes">
+            GitHub in particular has provided a <a href="https://githubengineering.com/the-github-graphql-api/">good writeup</a> of why they moved from their very popular REST API to GraphQL, which is available on their engineering blog.
+          </aside>
+        </section>
+
+        <section><h2>Why GraphQL?</h2></section>
 
 				<section>
-					<h1>Why GraphQL?</h1>
-				</section>
-
-				<section>
-					<h3>Brevity</h3>
+					<h3>Specificity</h3>
 					<p class="fragment">We can request only those fields we will use</p>
 
           <div class="request-response">
@@ -128,7 +126,12 @@
 
 				<section>
 					<h3>Discoverability</h3>
-					<p class="fragment">We can ask a GraphQL schema <a href="https://developer.github.com/v4/explorer/" target="_blank">about itself</a></p>
+
+          <div class="fragment">
+            <p>We can ask a GraphQL schema <a href="https://developer.github.com/v4/explorer/" target="_blank">about itself</a></p>
+
+            <img src="img/introspection.png" />
+          </div>
 
 					<aside class="notes">
 						This is a publically-available web app that you can use to run GraphQL queries against GitHub's GraphQL API. Let's open the Docs pane. Here you can see that the schema supports query and mutation types. Let's see what kind of queries they support. There are quite a few! Let's explore Licenses. We can see that there is a license field that takes a key. We'll try "MIT." Cool. Now suppose we didn't know what license keys exist. But we see there is a licenses field, and we can introspect to find keys. What else can we learn about licenses? Let's look at limitations. Notice that the editor automatically filled in some fields for us! All of this can happen because the schema can be introspected, allowing the tool to give us things like searchable documentation, auto-complete, and query validation.
@@ -136,7 +139,7 @@
 				</section>
 
 				<section class="smaller-code">
-					<h3>Constancy</h3>
+					<h3>Reliability</h3>
 					<p class="fragment">We can stop versioning our API</p>
 
           <div class="request-response">
@@ -158,14 +161,59 @@
 					</aside>
 				</section>
 
-        <section><h1>Tools</h1></section>
-				<section>Tools: graphql-ruby</section>
-				<section>Tools: apollo (JS, Swift/iOS, Java/Android)</section>
-				<section>Tools: graphiql</section>
+        <section><h2>Tools</h2></section>
+
+        <section>
+          <h3>
+            <img src="img/graphql-ruby.png" style="vertical-align: middle" />
+            graphql-ruby
+          </h3>
+
+          <p>A gem by Robert Mosolgo of GitHub which provides a GraphQL server implementation and a DSL for defining your schema.</p>
+
+          <p><a href="https://github.com/rmosolgo/graphql-ruby/">rmosolgo/graphql-ruby</a></p>
+        </section>
+
+        <section>
+          <p><a href="https://www.apollographql.com/"><img src="img/apollo.svg"/></a></p>
+
+          <ul>
+            <li>A client-side library for React, iOS, and Android</li>
+            <li>A mock server to develop front-end code against</li>
+            <li>From Meteor Development Group</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>GraphiQL</h3>
+
+          <p>Provided by <strong>graphiql-rails</strong> gem, runs independently, also available as an Electron app.</p>
+
+          <img src="img/graphiql.png" />
+        </section>
+
+        <section>
+          <h3>Summary</h3>
+
+          <ul>
+            <li>GraphQL is a spec for building an API</li>
+            <li>Advantages are specificity, predictability, efficiency, discoverability, and reliability
+            <li>Back-end, front-end, and introspection tooling is available</li>
+          </ul>
+        </section>
 
 				<section>
           <h1>The End</h1>
-				</section>
+
+          <ul class="fragment">
+            <li>GraphQL definition from <a href="https://www.graphql.org">graphql.org</a>, BSD 3-Clause</li>
+            <li><a href="https://developer.github.com/v4/explorer">https://developer.github.com/v4/explorer</a></li>
+            <li><a href="https://www.apollographql.com">https://www.apollographql.com</a></li>
+            <li><a href="https://github.com/rmosolgo/graphql-ruby">https://github.com/rmosolgo/graphql-ruby</a></li>
+            <li><a href="http://facebook.github.io/graphql/October2016">http://facebook.github.io/graphql/October2016</a></li>
+            <li><a href="https://github.com/benkimball/graphql-primer">https://github.com/benkimball/graphql-primer</a></li>
+          </ul>
+        </section>
 			</div>
 		</div>
 
@@ -176,7 +224,7 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
