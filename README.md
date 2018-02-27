@@ -1,6 +1,21 @@
 # A presentation about GraphQL
 
-WIP.
+## To view
+
+You can run the whole presentation from disk:
+
+  - clone this repo
+  - open index.html in your browser
+  - use left/right arrow keys to navigate
+
+## To view with local server
+
+Or you can spin up a local web server:
+
+  - clone this repo
+  - `./bin/run`
+  - visit http://localhost:8000/
+  - use left/right arrow keys to navigate
 
 ## License
 
