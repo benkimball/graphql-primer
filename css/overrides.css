@@ -1,4 +1,8 @@
+body .reveal {
+  font-family: 'Open Sans', sans-serif;
+}
 body .reveal section h1, body .reveal section h2, body .reveal section h3, body .reveal section h4 {
+  font-family: 'Alfa Slab One', cursive;
   padding-bottom: 10px;
 }
 
@@ -19,4 +23,31 @@ body .reveal section img {
 }
 body .reveal section.smaller-code code {
   font-size: 80%;
+}
+body .reveal section img {
+  vertical-align: middle;
+}
+#evolution2-hl {
+  background-image: url(../img/added.png);
+  background-position: 0% 60%;
+  background-repeat: repeat-x;
+  background-size: 6%;
+}
+#evolution3-hl {
+  background-image: url(../img/added.png);
+  background-position: 0% 67%;
+  background-repeat: repeat-x;
+  background-size: 6%;
+}
+#evolution4-hl {
+  background-image: url(../img/deleted.png);
+  background-position: 73.2% 50%;
+  background-repeat: no-repeat;
+  background-size: 28% 15%;
+}
+ul.codophon li {
+  list-style-type: none;
+  text-align: center;
+  font-size: small;
+  line-height: 1.5;
 }

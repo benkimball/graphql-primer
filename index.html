@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
-
 	<head>
 		<meta charset="utf-8">
 
-		<title>A GraphQL Primer</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans" rel="stylesheet">
+
+    <title>A GraphQL Primer</title>
 
 		<meta name="description" content="A description and examples of the GraphQL specification">
 		<meta name="author" content="Ben Kimball">
@@ -33,16 +35,19 @@
 		<div class="reveal">
 			<div class="slides language-graphql">
 				<section>
-					<h1>GraphQL</h1>
-					<h3>A primer</h3>
+          <h1>
+            <img width="25%" data-src="img/graphql.svg" />
+            GraphQL
+          </h1>
+          <p><small>1 March 2018</small></p>
 				</section>
 
         <section><h2>Meta</h2></section>
 
         <section>
-					<p>My goal is to explain and demonstrate the GraphQL specification</p>
+					<p>My goal is to explain and demonstrate GraphQL technology</p>
 
-					<p class="fragment">It should last about 20 minutes, leaving us 10 minutes for discussion</p>
+					<p class="fragment">It should take about 20 minutes, leaving us 10 minutes for discussion</p>
 
 					<p class="fragment">These slides are <a href="https://github.com/benkimball/graphql-primer">available online</a></p>
 				</section>
@@ -127,11 +132,9 @@
 				<section>
 					<h3>Discoverability</h3>
 
-          <div class="fragment">
-            <p>We can ask a GraphQL schema <a href="https://developer.github.com/v4/explorer/" target="_blank">about itself</a></p>
+          <p class="fragment">We can ask a GraphQL schema <a href="https://developer.github.com/v4/explorer/" target="_blank">about itself</a></p>
 
-            <img src="img/introspection.png" />
-          </div>
+          <img class="fragment" data-src="img/introspection.png" />
 
 					<aside class="notes">
 						This is a publically-available web app that you can use to run GraphQL queries against GitHub's GraphQL API. Let's open the Docs pane. Here you can see that the schema supports query and mutation types. Let's see what kind of queries they support. There are quite a few! Let's explore Licenses. We can see that there is a license field that takes a key. We'll try "MIT." Cool. Now suppose we didn't know what license keys exist. But we see there is a licenses field, and we can introspect to find keys. What else can we learn about licenses? Let's look at limitations. Notice that the editor automatically filled in some fields for us! All of this can happen because the schema can be introspected, allowing the tool to give us things like searchable documentation, auto-complete, and query validation.
@@ -144,12 +147,12 @@
 
           <div class="request-response">
             <pre class="fragment" data-src="code/evolution1.graphql"></pre>
-            <pre class="fragment" data-src="code/evolution2.graphql"></pre>
+            <pre class="fragment" id="evolution2-hl" data-src="code/evolution2.graphql"></pre>
           </div>
 
           <div class="request-response">
-            <pre class="fragment" data-src="code/evolution3.graphql"></pre>
-            <pre class="fragment" data-src="code/evolution4.graphql"></pre>
+            <pre class="fragment" id="evolution3-hl" data-src="code/evolution3.graphql"></pre>
+            <pre class="fragment" id="evolution4-hl" data-src="code/evolution4.graphql"></pre>
           </div>
 
           <aside class="notes">
@@ -165,7 +168,7 @@
 
         <section>
           <h3>
-            <img src="img/graphql-ruby.png" style="vertical-align: middle" />
+            <img src="img/graphql-ruby.png" />
             graphql-ruby
           </h3>
 
@@ -175,19 +178,34 @@
         </section>
 
         <section>
+          <p>Basic graphql-ruby usage</p>
+          <pre class="language-rb" data-src="code/graphql_ruby_usage.rb"></pre>
+        </section>
+
+        <section>
+            <p>In practice, broken out into classes</p>
+            <pre class="language-rb" data-src="code/award_type.rb"></pre>
+            <p class="fragment"><em>N.B.</em> this syntax is in flux</p>
+        </section>
+
+        <section>
           <p><a href="https://www.apollographql.com/"><img src="img/apollo.svg"/></a></p>
 
           <ul>
-            <li>A client-side library for React, iOS, and Android</li>
-            <li>A mock server to develop front-end code against</li>
-            <li>From Meteor Development Group</li>
+            <li class="fragment">A client-side library for React, iOS, and Android</li>
+            <li class="fragment">A mock server to develop front-end code against</li>
+            <li class="fragment">From Meteor Development Group</li>
           </ul>
+        </section>
+        <section>
+          <p>Basic Apollo usage example</p>
+          <pre class="language-js" data-src="code/apollo_usage.js"></pre>
         </section>
 
         <section>
           <h3>GraphiQL</h3>
 
-          <p>Provided by <strong>graphiql-rails</strong> gem, runs independently, also available as an Electron app.</p>
+          <p>Provided by <strong>graphiql-rails</strong> gem, runs independently, also available as an Electron app</p>
 
           <img src="img/graphiql.png" />
         </section>
@@ -205,7 +223,7 @@
 				<section>
           <h1>The End</h1>
 
-          <ul class="fragment">
+          <ul class="fragment codophon">
             <li>GraphQL definition from <a href="https://www.graphql.org">graphql.org</a>, BSD 3-Clause</li>
             <li><a href="https://developer.github.com/v4/explorer">https://developer.github.com/v4/explorer</a></li>
             <li><a href="https://www.apollographql.com">https://www.apollographql.com</a></li>
@@ -224,7 +242,7 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: false,
+				controls: true,
 				progress: true,
 				history: true,
 				center: true,
