@@ -2,13 +2,18 @@
 
 ## To view
 
+  - [GraphQL Primer](https://benkimball.github.io/graphql-primer)
+  - use left/right arrow keys to navigate
+
+## To view locally
+
 You can run the whole presentation from disk:
 
   - clone this repo
   - open index.html in your browser
   - use left/right arrow keys to navigate
 
-## To view with local server
+## To view with local web server
 
 Or you can spin up a local web server:
 
